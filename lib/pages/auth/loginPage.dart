@@ -25,7 +25,7 @@ class _LoginpageState extends State<Loginpage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center, // horizontal center
               children: [
-                const SizedBox(height: 50), // 👈 top space
+                const SizedBox(height: 50), // top space
 
                 const Text(
                   "Linkup",
