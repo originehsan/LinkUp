@@ -1,4 +1,6 @@
+import 'package:chat_app/pages/auth/registerpage.dart';
 import 'package:chat_app/widgets/widget.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -85,7 +87,7 @@ class _LoginpageState extends State<Loginpage> {
                   ),
 
                   validator: (value) {
-                    if ( value!.length < 6) {
+                    if (value!.length < 6) {
                       return "Password must be atleast 6 ";
                     } else {
                       return null;
@@ -98,7 +100,44 @@ class _LoginpageState extends State<Loginpage> {
                     });
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 15),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                RichText(
+                  text: TextSpan(
+                    text: "Don't have an account ",
+                    style: TextStyle(color: Colors.black, fontSize: 14),
+                    children: [
+                      TextSpan(
+                        text: 'Register here',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            nextScreen(context, RegisterPage());
+                          },
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
