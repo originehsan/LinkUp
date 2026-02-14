@@ -59,7 +59,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
 
                         const SizedBox(height: 15),
-
+// lottie asset
                         Lottie.asset(
                           'assets/lottie/Live chatbot.json',
                           width: 250,
